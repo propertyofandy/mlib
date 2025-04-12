@@ -1,0 +1,5 @@
+.cache/
+build/
+*.exe 
+main.cpp 
+m2.cpp
