@@ -2,12 +2,8 @@
 #define ENUM_HPP_
 #include <cstddef>
 #include <iostream>
-#include <source_location>
-#include <string_view>
 #include <type_traits>
-#include <array>
 #include <algorithm>
-
 #include "../type_trait/trait.hpp"
 
 namespace mxxlib {
