@@ -28,6 +28,8 @@ namespace mxxlib {
 
     template <typename T>
     struct trait <T, std::enable_if_t<std::is_enum_v<T>>>{      
+        static_assert(std::is_enum_v<T>, "Type must be an enum.");
+        static_assert(std::is_same_v<std::underlying_type_t<T>, char> || std::is_same_v<std::underlying_type_t<T>, unsigned char>, "Enum must have underlying type char for now.");
 
         static constexpr int id = _detail::unique_id<T>();
         #if defined(__GNUC__) || defined(__clang__)
@@ -66,7 +68,6 @@ namespace mxxlib {
 
     template <typename T> 
     struct trait <T, std::enable_if_t<std::is_class_v<T>>> {
-        
         static constexpr int id = _detail::unique_id<T>();
 
         #if defined(__GNUC__) || defined(__clang__)

@@ -4,6 +4,8 @@
 #include "../type_trait/trait.hpp"
 #include <type_traits>
 
+namespace mxxlib {
+
 
 //used to determine max alignment and size at compile time
 template<typename... Ts>
@@ -122,5 +124,5 @@ private:
     size_t type_id;
 };
 
-
+}
 #endif

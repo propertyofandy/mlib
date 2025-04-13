@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.30.0)
+project(type_test)
+
+enable_testing()
+
+
+
+add_executable(enum_test Enum.cc)
+target_link_libraries(enum_test 
+    mxxlib 
+    gtest
+    gtest_main
+)
+add_test(NAME TypeEnumTest COMMAND enum_test)
+
+add_executable(union_test Enum.cc)
+target_link_libraries(union_test 
+    mxxlib 
+    gtest
+    gtest_main
+)
+add_test(NAME TypeUnionTest COMMAND union_test)
+
+
+add_executable(record_test Enum.cc)
+target_link_libraries(record_test 
+    mxxlib 
+    gtest
+    gtest_main
+)
+add_test(NAME TypeRecordTest COMMAND record_test)

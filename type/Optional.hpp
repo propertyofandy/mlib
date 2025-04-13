@@ -10,7 +10,7 @@ namespace mxxlib {
         T value;
         Some(): value(T{}) {}
         Some(const T val) : value(val) {}
-
+        using Type = T;
 
         bool operator==(const Some& other) const {
             return value == other.value;
